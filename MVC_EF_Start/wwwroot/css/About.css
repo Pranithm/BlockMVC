@@ -7,6 +7,10 @@
     margin: 5em 24em;
 }
 
+.People_BioData_Align {
+    display: flex;
+    flex-direction: row;
+}
 .people_Header {
     color: black;
     text-transform: capitalize;
