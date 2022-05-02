@@ -32,35 +32,34 @@ namespace MVC_EF_Start.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string NATIONAL_PARK_API_PATH = BASE_URL + "/news";
+            string Block_API_PATH = BASE_URL + "/news";
             string parksData = "";
 
             
 
-            //httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
-            httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
+            httpClient.BaseAddress = new Uri(Block_API_PATH);
 
             try
             {
-                //HttpResponseMessage response = httpClient.GetAsync(NATIONAL_PARK_API_PATH)
-                //                                        .GetAwaiter().GetResult();
-                HttpResponseMessage response = httpClient.GetAsync(NATIONAL_PARK_API_PATH)
+         
+                HttpResponseMessage response = httpClient.GetAsync(Block_API_PATH)
                                                         .GetAwaiter().GetResult();
 
 
 
                 if (response.IsSuccessStatusCode)
                 {
-                    parksData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                    blockData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 }
 
                 if (!parksData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
                     var temp = JObject.Parse(parksData);
-                  var  parks = JsonConvert.DeserializeObject(parksData);
+                    var  blocks = JsonConvert.DeserializeObject(blockData);
             
                     var z=temp["data"].ToList();
+                    // converting the data to JSON format using newtonJSON
                     foreach(var x in z)
                     {
                         var docTitle = x["title"].ToString();
