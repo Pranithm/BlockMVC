@@ -187,7 +187,7 @@ namespace MVC_EF_Start.Controllers
 
         public async Task<ViewResult> DatabaseOperations()
     {
-        // CREATE operation
+        //  CREATE operation on database for CRUD operations
             
             // Author details
             Author AuthorDetails = new Author();
@@ -196,6 +196,14 @@ namespace MVC_EF_Start.Controllers
             Author AuthorDetails1 = new Author();
             AuthorDetails1.AuthorName = "Akhil";
 
+            Author AuthorDetails2 = new Author();
+            AuthorDetails2.AuthorName = "Santhosh";
+
+
+            Author AuthorDetails3 = new Author();
+            AuthorDetails3.AuthorName = "Manideep";
+            
+            
             Author AuthorDetails2 = new Author();
             AuthorDetails2.AuthorName = "Santhosh";
 
