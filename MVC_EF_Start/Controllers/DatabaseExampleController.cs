@@ -33,7 +33,7 @@ namespace MVC_EF_Start.Controllers
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
             string Block_API_PATH = BASE_URL + "/news";
-            string parksData = "";
+            string blockData = "";
 
             
 
@@ -52,10 +52,10 @@ namespace MVC_EF_Start.Controllers
                     blockData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 }
 
-                if (!parksData.Equals(""))
+                if (!blockData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                    var temp = JObject.Parse(parksData);
+                    var temp = JObject.Parse(blockData);
                     var  blocks = JsonConvert.DeserializeObject(blockData);
             
                     var z=temp["data"].ToList();
