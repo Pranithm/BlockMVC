@@ -1,0 +1,67 @@
+﻿@{ Layout = "_Layout";
+    var viewModal = ViewBag.addClasses; 
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Write</title>
+    <link rel="stylesheet" href="~/css/write.css" />
+    <link rel="stylesheet" href="~/css/modal.css" />
+    <script src='~/js/modal.js' crossorigin='anonymous'></script>
+
+    <script>
+        const setData = (id) => {
+            if (id = "writeTitle") {
+                var data = document.getElementById(id).value;
+                console.log(data);
+                var x = document.getElementById(id);
+                console.log(x);
+                document.getElementById(id).innerHTML = data;
+            } else {
+                var data = document.getElementById(id).innerHTML;
+
+                document.getElementById(id).innerHTML = data;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="write_FirstRow">
+        <h1 class="write_FirstRow-Head">Write your own BLOCK</h1>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal @viewModal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p class="modal_Text"> Hurrey!&nbsp; Your block is now added to the Blocks!</p>
+            <div class="modal-Button-Container">
+                <a class="modal-Button" asp-controller="DatabaseExample" asp-action="Stories">Go to Blocks</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="write_SecondRow">
+        <form asp-controller="DatabaseExample" asp-action="postData" method="get">
+            <div class="input_TitleContainer input_NameContainer">
+                <input name="writeName" class="story_TitleBox" onchange="setData(writeName)" type="text" id="storyName" placeholder="Your Name">
+            </div>
+            <div class="input_TitleContainer">
+                <input name="writeTitle" class="story_TitleBox" onchange="setData(writeTitle)" type="text" id="storyTitle" placeholder="Block Title">
+            </div>
+            <div class="input_StoryContainer">
+                <textarea name="writeData" onchange="setData(writeData)" class="input_Story textarea-Style" placeholder="Type your block here" contenteditable="true" data-placeholder="Write your Block..."></textarea>
+            </div>
+            <div class="write_ButtonContainer">
+                <button type="submit" asp-controller="DatabaseExample" asp-action="postData" class="post_Button">POST<i class="fa fa-pencil pencil-Icon" aria-hidden="true"></i></button>
+            </div>
+        </form>
+
+    </div>
+
+
+</body>
+</html>

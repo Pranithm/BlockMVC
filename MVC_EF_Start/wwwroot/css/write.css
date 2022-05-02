@@ -1,0 +1,73 @@
+﻿body {
+    margin: 0;
+}
+
+.write_SecondRow {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    background-image: url("~/images/typing.png");
+}
+
+.write_FirstRow-Head {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+.input_TitleContainer {
+    border: none;
+    margin-bottom: 50px;
+    border-bottom: 1px solid black;
+    border-bottom-width: 1px;
+}
+
+.story_TitleBox {
+    width: 100%;
+    border: none;
+    font-size: 38px;
+    /* font-weight: bold; */
+    /* font-family: sans-serif; */
+    color: #000;
+}
+
+*:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #B3B3B1;
+}
+
+.input_Story {
+    color: #000;
+    line-height: 2em;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    width: 100%;
+    height: 19em;
+}
+
+
+.post_Button {
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: -0.2px;
+    padding: 10px;
+    border-radius: 5%;
+    padding: 17px 32px;
+    cursor: pointer;
+}
+
+[contenteditable] {
+    padding: 12px;
+}
+
+[data-placeholder]:empty:before {
+    content: attr(data-placeholder);
+    color: #888;
+    font-style: italic;
+}

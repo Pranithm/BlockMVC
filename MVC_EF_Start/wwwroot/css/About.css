@@ -1,0 +1,108 @@
+﻿
+.about_Container {
+    margin: 20px;
+}
+
+.separator {
+    margin: 5em 24em;
+}
+
+.people_Header {
+    color: black;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 800;
+    font-size: -webkit-xxx-large;
+    font-family: sans-serif;
+}
+
+.people_Name {
+    font-family: sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #424242;
+}
+
+.people_Details {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.peopel_Details-Summary {
+    font-size: 1rem;
+    line-height: 1.8;
+    display: none;
+    font-family: sans-serif;
+    color: #424242;
+    font-weight: 300;
+}
+
+.people_Bio-Head {
+    font-family: sans-serif;
+    cursor: pointer;
+    margin: 0;
+}
+
+.hide_people--Summary {
+    display: block;
+}
+
+.summary-Container {
+    justify-content: flex-start;
+    text-align: left;
+    padding: 15px 0;
+    transition: opacity 200ms ease 0s;
+    background-color: #fff;
+    display: block;
+}
+
+.people-Column {
+    flex-basis: 30.6666666667%;
+    width: 30.6666666667%;
+    text-align: center;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    flex: 0 1 auto;
+}
+
+.team-members-image {
+    width: 100%;
+    border-radius: 100%;
+    margin-bottom: 10px;
+    max-width: 45%;
+}
+
+.bio-Link {
+    text-decoration: none;
+}
+
+.arrow-up {
+    transform: rotate(180deg);
+    transition: 0.3s ease-in-out;
+}
+
+.about-Head {
+    font-family: sans-serif;
+    font-size: 5vw;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.about_Project {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    padding: 0 8em;
+    color: #424242;
+}
+
+.model_Arch-Container {
+    padding: 0 192px;
+}
+
+.git_Repo {
+    text-decoration: none;
+}

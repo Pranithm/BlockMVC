@@ -1,0 +1,87 @@
+﻿@{ Layout = "_Layout"; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Block</title>
+    <link rel="stylesheet" href="~/css/About.css" />
+    <script src='https://kit.fontawesome.com/ed833673d8.js' crossorigin='anonymous'></script>
+</head>
+<body>
+    <div class="about_Container">
+        <h1 class="about-Head"> THE BLOCK</h1>
+        <div class="about_FirstRow-Container">
+            <div class="about_Project">
+                <p>Block is a space which is open to everyone but promotes substance and authenticity where anyone can write. Individuals with unique ideas share their knowledge about cryptos, Tech, News, and thinking here. Our purpose is to spread these ideas and information to the world. Block uses <a href='https://messari.io/api'>messari api</a> to provide real-time crypto information.</p>
+                <p>Block Git Repository: <a class="git_Repo" href="https://github.com/Pranithm/BlockMVC">Click to open</a></p>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="about_SecondRow-Container">
+            <div class="people">
+                <h3 class="people_Header">
+                    people
+                </h3>
+                <div class="people_Details">
+                    <div class="people-Column">
+                        <img class="team-members-image" src="~/images/l3.jpeg" alt="usf student">
+                        <h5 class="people_Name">
+                            Lokesh Reddy
+                        </h5>
+                        <p class="people_Bio-Head" onclick="bioContent('p2', 'a2')">
+                            Bio
+                            <i class='fas fa-angle-down' id="a2"></i>
+                        </p>
+                        <div class="summary-Container">
+                            <p class="peopel_Details-Summary" id="p2">
+                                Lokesh is the brain behind the idea of the BLOCK. He is Data enthusiast with over 2 years of professional experience, workd on building webpages for block using HTML, CSS and Javascript <a href="https://github.com/svazrala04"><i class="fa-brands fa-github"></i> git</a>
+                            </p>
+                        </div>
+                    </div>
+                   
+                    <div class="people-Column">
+                        <img class="team-members-image" src="~/images/naveen.jpg" alt="usf student">
+                        <h5 class="people_Name">
+                            Naveen Reddy
+                        </h5>
+                        <p class="people_Bio-Head" onclick="bioContent('p1', 'a1')">
+                            Bio
+                            <i class='fas fa-angle-down' id="a1"></i>
+                        </p>
+                        <div class="summary-Container">
+                            <p class="peopel_Details-Summary" id="p1">
+                                Naveen single handedly introduced designs for the pages. He designed the data model and used his experience to ensure the perfect implementation of Block <a href="https://github.com/naveenreddy383"><i class="fa-brands fa-github"></i> git</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="people-Column">
+                        <img class="team-members-image" src="~/images/m2.jpeg" alt="usf student">
+                        <h5 class="people_Name">
+                            Pranith Modem
+                        </h5>
+                        <p class="people_Bio-Head" onclick="bioContent('p3', 'a3')">
+                            Bio
+                            <i class='fas fa-angle-down' id="a3"></i>
+                        </p>
+                        <div class="summary-Container">
+                            <p class="peopel_Details-Summary" id="p3">
+                                Modem helped in implementing the Block. His area of specialty revolves around helping the team to achieve the ideal implementation of the Block <a href="https://github.com/Pranithm"><i class="fa-brands fa-github"></i> git</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="separator">
+        <div class="about_ThirdRow-Container">
+            <h2 class="people_Header"> Model Architecture</h2>
+            <div class="model_Arch-Container">
+                <img class="model_Arch" src="~/images/Block.png" alt="Model Architecture">
+            </div>
+        </div>
+    </div>
+    <script src='~/js/about.js' crossorigin='anonymous'></script>
+</body>
+</html>

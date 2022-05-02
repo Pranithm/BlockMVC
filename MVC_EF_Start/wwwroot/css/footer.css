@@ -1,0 +1,12 @@
+﻿body {
+}
+.footer-Container {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 11px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

@@ -1,0 +1,139 @@
+﻿
+.top-Story {
+    font-family: sans-serif;
+}
+
+.full_Stories_Header {
+    color: #000;
+    font-family: sans-serif;
+}
+
+.full_Story-Author {
+    display: flex;
+    flex-direction: row;
+}
+
+.full_Story-AuthorName {
+    margin: 0;
+}
+
+.fullstory_Profile-icon {
+    margin-top: 3px;
+    margin-bottom: auto;
+    background-color: #000;
+    text-align: center;
+    color: white;
+    padding: 9px;
+    border-radius: 12%;
+    margin-right: 10px;
+}
+
+.fullstory-Author-Details {
+    font-family: sans-serif;
+}
+
+.user_Icon-Story {
+    /* height: 40px; */
+}
+
+.full_Story-Head {
+    font-family: sans-serif;
+}
+
+
+.full_Story-data {
+    line-height: 35.5px;
+    text-align: justify;
+}
+
+.fullStory_Body-Container {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+   /* background-image: url('../images/feed.png');*/
+}
+
+.write-Group {
+    width: 21%;
+    height: 291px;
+}
+
+.fullstory_Title-Container {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 39px;
+}
+
+.full_Story-Date {
+    color: grey;
+    /* padding-left: 15px; */
+}
+
+.stories_SecondRow-Container {
+    background-color: white;
+    padding: 24px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.update-Button {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 10px;
+    border-radius: 6%;
+    padding: 8px 0px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.update-Button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    /* transition: background-color color 2s; */
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+}
+
+.update-Card {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.comments {
+    padding-left: 20px;
+}
+
+.addComment {
+    width: 80%;
+}
+
+.addComment-Plus {
+    font-size: 21px;
+    color: black;
+}
+
+.comment-Button {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    line-height: 100%;
+    padding: 10px;
+    border-radius: 6%;
+    padding: 8px 0px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 10px;
+    border: none;
+    background-color: white;
+}
+
+.comment_Data {
+    padding-left: 30px;
+}
+
+.comment_Header {
+    margin-top: 20px;
+    font-weight: 700;
+}

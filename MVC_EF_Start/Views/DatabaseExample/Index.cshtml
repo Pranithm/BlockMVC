@@ -1,0 +1,163 @@
+﻿@{
+    ViewData["title"] = "Home Page";
+    var data = ViewBag.CardDetails;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/home.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src='https://kit.fontawesome.com/ed833673d8.js' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    
+
+</head>
+<body>
+    <div class="body_Data">
+        <!-- first row started -->
+        <section class="first-Row-Container">
+            <div class="home-Quote-Container">
+                <h1 class="home-Quote">Publish, explore, and earn, All in one place.</h1>
+
+                <div class="read_Button-Container">
+                    <a class="read-Button" asp-controller="DatabaseExample" asp-action="Stories">start reading<i class="update-Card fa fa-solid fa-newspaper" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="home-Quote-Container">
+                <!-- Add an image -->
+                <img class="story-image" src="~/images/write.gif" alt="story">
+            </div>
+        </section>
+        <hr>
+
+        <!-- second row started -->
+        <section class="second-Row-Container">
+            <div class="space-Container">
+                <div>
+                    <h1 class="space-Header">Type your own block.</h1>
+                    <p class="write-Story">—>Tell your story your way — with different ways.</p>
+                </div>
+                <div class="button-Container">
+                    <!-- Add an image -->
+                    <a class="write-Button" asp-controller="DatabaseExample" asp-action="Write">Start Writing<i class="fa fa-pencil pencil-Icon" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div>
+                <!-- <img class="story-image" src="blog.png" alt="story"> -->
+                <img class="story-image" src="~/images/eth2.gif" alt="story">
+            </div>
+        </section>
+        <hr>
+
+        <!-- third row started -->
+        <section class="third-Row-Container">
+            <div class="top-Container">
+                <h1 class="top-Header">Top Trending Stories</h1>
+            </div>
+
+            <div class="top-Stories">
+                @{ foreach (var c in data)
+                    {
+                        foreach (var doc in c.document)
+                        {
+        <div class="story-Thumbnail">
+            <div class="story_Profile">
+                <p> <i class="fa-solid fa-user user-Icon"></i>@doc.author.AuthorName</p>
+                <p class="thumb_Date">@doc.DocumentDate</p>
+            </div>
+            <div class="story_Head-Container">
+                <h3 class="story_Thumbnail-head">
+                    @doc.DocumentTitle
+                </h3>
+            </div>
+            <div>
+                <p class="story_Thumbnail-data">
+                    @doc.DocumentData
+                </p>
+            </div>
+            <div class="thumb_Footer">
+                <p class="thumb_Estimate">5 mins read</p>
+                <p>. selected for you</p>
+            </div>
+            <div class="Details-Container">
+                <!-- Add an image -->
+                <a class="card-Button" asp-controller="DatabaseExample" asp-action="Stories">More Details<i class="arrow-Card fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+            </div>
+        </div> }
+
+                    } }
+
+            </div>
+        </section>
+        <hr>
+
+        <section class="fourth-Row-Container">
+            <div class="chart-Load">
+               <div id="chart-Data">
+                    <h1 class="coin_Updates">Latest Coin  Price Updates</h1>
+                    <canvas id="barchartexample" width="500" height="350"></canvas>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script>
+    new Chart(document.getElementById("barchartexample"), {
+      type: '@ViewBag.ChartType',
+      data: {
+        labels: [@Html.Raw(@ViewBag.Labels)],
+        datasets: [
+          {
+            label: "BTC",
+            data: [@ViewBag.Data1],
+            fill:false
+            },
+            {
+                label: "ETH",
+                fill: false,
+                data: [@ViewBag.Data1],
+                borderColor:"green"
+            },
+            {
+                label: "ETH",
+                fill: false,
+                data: [@ViewBag.Data2],
+                borderColor:"blue"
+            },
+            {
+                label: "Solanoo",
+                fill: false,
+                data: [@ViewBag.Data3],
+                borderColor:"pink"
+            },
+            {
+                label: "UNISWAP",
+                fill: false,
+                data: [@ViewBag.Data4],
+                borderColor:"yellow"
+            },
+            {
+                label: "Doge",
+                fill: false,
+                data: [@ViewBag.Data5],
+                borderColor:"orange"
+            },
+        ]
+      },
+        options: {
+            legend: { display: false },
+        title: {
+          display: true,
+          text: 'Crypto Updates'
+        }
+      }
+    });
+    </script>
+</body>
+</html>

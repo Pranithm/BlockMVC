@@ -1,0 +1,120 @@
+﻿@{ Layout = "_Layout";
+   var sDetails = ViewBag.storyBlockDetails;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stories</title>
+    <link rel="stylesheet" href="~/css/stories.css" />
+    <script src='https://kit.fontawesome.com/ed833673d8.js' crossorigin='anonymous'></script>
+    <script>
+        const setData1 = (id) => {
+            var data = document.getElementById("storyName").innerHTML;
+            document.getElementById("storyName").innerHTML = "11";
+        }
+    </script>
+</head>
+<body>
+    <section class="fullstory_Title">
+        <div class="fullstory_Title-Container">
+            <h1>Read all trending Blocks here...</h1>
+            <img class="write-Group" src="~/images/feed.png" alt="usf student">
+        </div>
+    </section>
+    <section class="fullStory_Body-Container">
+        <!-- first row started -->
+        <section class="stories_FirstRow-Container">
+            <div>
+                <!-- <img class="story-image" src="typing.png" alt="story"> -->
+            </div>
+        </section>
+        <!-- Second row started -->
+        <section>
+
+            @{ foreach (var c in sDetails)
+               {
+                        <form asp-controller="DatabaseExample" asp-action="updateDataForm" method="get">
+                            <input hidden name="id1" value=@c.DocumentID />
+                            <div class="stories_SecondRow-Container">
+                                <div class="full_Story">
+                                    <div class="full_Story-Author">
+                                        <div class="fullstory_Profile-icon">
+                                            <i class="fa-solid fa-user user_Icon-Story"></i>
+                                        </div>
+                                        <div class="fullstory-Author-Details">
+                                            <p class="full_Story-AuthorName"> @c.author.AuthorName </p>
+                                            <p class="full_Story-Date">published on @c.DocumentDate</p>
+                                        </div>
+                                    </div>
+                                    <div class="full_Head-Container">
+                                        <h1 class="full_Story-Head">
+                                            @c.DocumentTitle
+                                        </h1>
+                                    </div>
+                                    <div>
+                                        <p class="full_Story-data">
+                                            @c.DocumentData
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input class="addComment" name="newcomment" type="text" placeholder="Add Comment" />
+                                        <button type="submit" name="id" value="test" asp-controller="DatabaseExample" asp-action="updateComment" class="comment-Button"><i class="addComment-Plus fa-solid fa-circle-plus"></i></button>
+                                    </div>
+
+                                    @{
+                                        if (c.cinfo.Count <= 0)
+                                        {
+                                            <p class="comment_Header">No Comments Yet.</p>
+
+                                        }
+
+                                        else
+                                        {
+                                            <p class="comment_Header">Comments</p>
+                                            @foreach (var co in c.cinfo)
+                                            {
+                                                @*comment start from here*@
+                                                <div class="comment_Container">
+                                                    <div class="comments">
+                                                        <span class="comment_Author">Anonymous <i class="fa-solid fa-comment"></i></span>
+                                                        <p class="comment_Data">@co.CommentData</p>
+                                                    </div>
+                                                </div>
+                                                @*comment end from here*@
+                                             }
+
+                                        }
+                                    }
+
+                                    <div>
+                                        <!-- Add an image -->
+                                        @* <a class="update-Button" asp-controller="DatabaseExample" asp-action="DeleteBlock">DELETE<i class="update-Card fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>*@
+                                        <button type="submit" name="id1" value="test" asp-controller="DatabaseExample" asp-action="DeleteBlock" class="update-Button">DELETE<i class="update-Card fa fa-arrow-circle-o-left" aria-hidden="true"></i></button>
+
+                                        <!-- Add an image -->
+                                        <button type="submit" name="id" value="test" asp-controller="DatabaseExample" asp-action="updateDataForm" class="update-Button">UPDATE<i class="update-Card fa fa-arrow-circle-o-left" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                 
+
+               }
+            }
+
+
+
+        </section>
+        <!-- Third row started -->
+        <section class="stories_ThirdRow-Container">
+            <div>
+                <!-- <p>READ</p> -->
+            </div>
+        </section>
+    </section>
+
+</body>
+</html>

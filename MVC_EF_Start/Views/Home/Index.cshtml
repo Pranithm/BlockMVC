@@ -1,0 +1,209 @@
+﻿@{
+    ViewData["title"] = "Home Page";
+    var name = "Lokesh";
+    var data = ViewBag.CardDetails;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="~/css/home.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src='https://kit.fontawesome.com/ed833673d8.js' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="body_Data">
+        <!-- first row started -->
+        <section class="first-Row-Container">
+            <div class="home-Quote-Container">
+                <h1 class="home-Quote">Publish, explore, and earn, All in one place.</h1>
+            </div>
+            <div class="home-Quote-Container">
+                <!-- Add an image -->
+                <img class="story-image" src="~/images/write.gif" alt="story">
+            </div>
+        </section>
+        <hr>
+
+        <!-- second row started -->
+        <section class="second-Row-Container">
+            <div class="space-Container">
+                <div>
+                    <h1 class="space-Header">Type your own block.</h1>
+                    <p class="write-Story">—>Tell your story your way — with different ways.</p>
+                </div>
+                <div class="button-Container">
+                    <!-- Add an image -->
+                    <button class="write-Button">Start Writing<i class="fa fa-pencil pencil-Icon" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            <div>
+                <!-- <img class="story-image" src="blog.png" alt="story"> -->
+                <img class="story-image" src="~/images/eth2.gif" alt="story">
+            </div>
+        </section>
+        <hr>
+
+        <!-- third row started -->
+        <section class="third-Row-Container">
+            <div class="top-Container">
+                <h1 class="top-Header">Top Trending Stories</h1>
+            </div>
+            <div>
+                <h1>Pranith Modem</h1>
+            </div>
+            <div class="top-Stories">
+                <h1>Testing</h1>
+                
+                    @{ foreach (var c in data)
+                       {
+                            foreach (var doc in c.document)
+                            {  
+                                <div class="story-Thumbnail">
+                                    <div class="story_Profile">
+                                        <p> <i class="fa-solid fa-user user-Icon"></i>@doc.author.AuthorName</p>
+                                        <p class="thumb_Date">@doc.DocumentDate</p>
+                                    </div>
+                                    <div class="story_Head-Container">
+                                        <h3 class="story_Thumbnail-head">
+                                            @doc.DocumentTitle
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <p class="story_Thumbnail-data">
+                                            @doc.DocumentData
+                                        </p>
+                                    </div>
+                                    <div class="thumb_Footer">
+                                        <p class="thumb_Estimate">5 mins read</p>
+                                        <p>. selected for you</p>
+                                    </div>
+                                </div>
+
+                            }
+
+                       }
+                   }
+                
+
+                <p>------------------------------------</p>
+                <div class="story-Thumbnail">
+                    <div class="story_Profile">
+                        <p> <i class="fa-solid fa-user user-Icon"></i> Jack Purdy</p>
+                        <p class="thumb_Date">Dec 23rd 2021</p>
+                    </div>
+                    <div class="story_Head-Container">
+                        <h4 class="story_Thumbnail-head">
+                            Maker outlines plan towards full decentralization by dissolving the Maker Foundation
+                        </h4>
+                    </div>
+                    <div>
+                        <p class="story_Thumbnail-data">
+                            In the weekly governance call, CEO of the Maker Foundation Rune Christensen presented the Self-Sustaining MakerDAO Initiative that would result in the dissolution of the Maker Foundation, the key entity leading development and governance of MakerDAO. As part of the new Governance Paradigm, Rune discussed three core pillars:\n\nElected Paid Contributors (EPCs) and Domain Teams  \nEPCs and Domain teams would effectively replace the various functional groups within the Foundation which has been funded through various <a href=\"https://messari.io/article/makerdao-receives-27-5m-from-dragonfly-and-paradigm-to-expand-into-asia\">token sales</a>, but going forward will need to be paid through the protocol itself.\nMaker Improvement Proposals (MIPs)  \nMIPs will look similar to other improvement frameworks and are designed to standardize the upgrade process from both a technical and social perspective.\nVote Delegates  \nDelegates will have the ability to vote on behalf of MKR holders who don’t wish to actively participate in the governance process allowing them to have a say in governance without needing to stay informed enough to make decisions on complicated matters.\n\nWhy it matters\n\nOpen Finance teams have often been criticized for operating under the guise of decentralization while in reality, a central entity maintains near full control. Dissolving the organization that has maintained substantial power of the protocol would be another major step towards the goal of fully decentralizing.  \n\nThe Maker Foundation has operated like a traditional startup with legal, accounting, marketing departments, etc. all funded through money raised from venture capital. Once it's dissolved, all of these functions will have to continue to serve their respective functions in a more decentralized manner which could create substantial operational hurdlers and couple prove to be unsustainable in the long run.",
+                        </p>
+                    </div>
+                    <div class="thumb_Footer">
+                        <p class="thumb_Estimate">5 mins read</p>
+                        <p>. selected for you</p>
+                    </div>
+                </div>
+
+                <div class="story-Thumbnail">
+                    <div class="story_Profile">
+                        <p>Jack Dorsey</p>
+                        <p class="thumb_Date">Dec 23rd 2021</p>
+                    </div>
+                    <div class="story_Head-Container">
+                        <h4 class="story_Thumbnail-head">
+                            MakerDAO gets stress tested as ETH price plummets
+                        </h4>
+                    </div>
+                    <div>
+                        <p class="story_Thumbnail-data">
+                            In the midst of extreme market-wide turmoil, <a href="https://messari.io/asset/maker\">MakerDAO</a> is facing one of its biggest challenges to date. The main form of collateral in the system, Ether, has dropped over 30% in a 24-hour timeframe marking one of the worst days in its short history. This has triggered an unprecedented wave of liquidations as loans quickly became undercollateralized.\n\nSource: Dune Analytic. Scripts created by Teo Leibowitz.\n\nNormally when the price drops causing a position to fall below the 150% required collateralization ratio, third-party liquidation bots known as Keepers can bid Dai for the underlying collateral in return for a small fee. This ensures the system remains whole and the debt is fully paid back. However, things became complicated today as the Ethereum network became congested leading to oracle’s price updates not going through with the gas price they chose.\n\nThis means Maker was not receiving the correct price of ETH needed to ensure proper liquidations. At one point the price feeds were showing $166 while the real price was 15% lower. Not only did this affect oracles, but Keepers likely did not have their bots configured to bid up gas prices meaning the collateral bids were also not going through, allowing some lucky liquidators to escape with collateral for free. This put the system in a $4 million deficit since collateral was leaving the system without any debt being paid back.\n\nWhy it matters\n\nThe value in stablecoins like <a href="https://messari.io/asset/dai\">Dai</a> lies in the fact they can be redeemed for their underlying collateral. In circumstances such as this, when there isn’t adequate collateral to back the asset, it can break the system unless otherwise remedied. To prevent this, MakerDAO has a Debt Auction mechanism where the protocol can inflate the supply of MKR in order to make up for the losses. This amount to a system-wide bailout where MKR holders shoulder the burden by way of dilution in order to keep the network functioning.\nAnother worst-case option being considered is an Emergency Shutdown. This would unwind the whole system returning collateral to Vault owners first and then to Dai holders who would be at risk of receiving a haircut. If this were to occur, it would likely erode faith in the idea of crypto-collateralized stablecoins, damaging one of the most essential components of Open Finance.
+                        </p>
+                    </div>
+                    <div class="thumb_Footer">
+                        <p class="thumb_Estimate">7 mins read</p>
+                        <p>. selected for you</p>
+                    </div>
+                </div>
+
+                <div class="story-Thumbnail">
+                    <div class="story_Profile">
+                        <p> <i class="fa-solid fa-user user-Icon"></i>Robin Sharma</p>
+                        <p class="thumb_Date">Dec 23rd 2021</p>
+                    </div>
+                    <div class="story_Head-Container">
+                        <h4 class="story_Thumbnail-head">
+                            Open Finance Fundamentals: The great migration (of Dai) continues
+                        </h4>
+                    </div>
+                    <div>
+                        <p class="story_Thumbnail-data">
+                            This report is part of a weekly series where we will explore the mechanics behind major Open Finance protocols and evaluate them on a fundamental basis. You can view prior reports <a href="https://messari.io/article/open-finance-fundamentals\">here</a>.\n\n<a href="https://messari.io/asset/maker/profile\">Maker</a> underwent a major milestone last month upgrading to Multi-collateral Dai (MCD). We wrote in detail about the implications of adding real-world collateral, the Dai Savings Rate, and the potential \"too big to fail\" dynamic in our latest Messari Pro Research <a href="https://messari.io/article/ensuring-ethereum-isn-t-on-the-brink-of-a-second-bailout\">report</a>. Since the upgrade, the system has undergone a gradual change of upgrading single-collateral Dai (Sai) to the new Dai.\n\nSource: sai2dai.xyz\n\nWhile the first few days of migration were slow, recently more Sai has transitioned to Dai. This is in large part to major providers such as Compound supporting MCD, although they are still the largest Sai holder with over $13 million. More loans on Compound are expected to transition away from Sai since the interest rates on both the lending and borrowing sides are more favorable with Dai. The transition from SCD to MCD is arguably one of the most impactful upgrades the nascent DeFi space has experienced and seeing Dai surpass Sai in the near future is a sign of readiness to transition away from Sai altogether.
+                    </div>
+                    <div class="thumb_Footer">
+                        <p class="thumb_Estimate">4 mins read</p>
+                        <p>. selected for you</p>
+                    </div>
+                </div>
+
+                <div class="story-Thumbnail">
+                    <div class="story_Profile">
+                        <p> <i class="fa-solid fa-user user-Icon"></i>Spencer Johnson</p>
+                        <p class="thumb_Date">Dec 23rd 2021</p>
+                    </div>
+                    <div class="story_Head-Container">
+                        <h4 class="story_Thumbnail-head">
+                            Multi-Collateral Dai Is Live
+                        </h4>
+                    </div>
+                    <div>
+                        <p class="story_Thumbnail-data">
+                            Today MakerDAO (<a href="https://messari.io/asset/maker\">$MKR</a>) is transitioning to the long-awaited Multi-Collateral Dai system that introduces support for different types of collateral besides ETH and makes some key structural changes. The first type of collateral to be available is Basic Attention Token (<a href="https://messari.io/asset/basic-attention-token\">$BAT</a>) which will have an initial debt ceiling of three million Dai compared to 50 million for Ether (<a href="https://messari.io/asset/ethereum\">$ETH</a>).\n\nThe current single collateral Dai (“Sai”) will continue to exist while users are encouraged to migrate to the new Dai. Another major change is the introduction of the Dai Savings Rate (DSR) which acts as an interest-bearing savings account. Unlike traditional accounts, it does not lend the money out, but rather it pays interest to depositors using funds from the Stability fee.\n\nWhy It Matters:\n\nNew collateral types should increase the addressable market of collateralized debt as well as the stability of the system by diversifying the debt pools.\nThe Stability Fee has been changed significantly throughout the year jumping from 0.5% to over 20% back down to 5%. The DSR provides another lever to adjust in order to keep Dai around $1 which should lessen interest rate volatility.
+                        </p>
+                    </div>
+                    <div class="thumb_Footer">
+                        <p class="thumb_Estimate">7 mins read</p>
+                        <p>. selected for you</p>
+                    </div>
+                </div>
+
+                <div class="story-Thumbnail">
+                    <div class="story_Profile">
+                        <p> <i class="fa-solid fa-user user-Icon"></i> Elon Musk</p>
+                        <p class="thumb_Date">Dec 23rd 2021</p>
+                    </div>
+                    <div class="story_Head-Container">
+                        <h4 class="story_Thumbnail-head">
+                            Dai stablecoin outstanding supply hits 100M 'debt ceiling
+                        </h4>
+                    </div>
+                    <div>
+                        <p class="story_Thumbnail-data">
+                            The number of Dai (<a href="https://messari.io/asset/dai\">$DAI</a>) outstanding has hit the hard-coded debt ceiling of 100 million (~$100 million). The jump in Dai outstanding coincided with a reduction in the stability fee from 9.5% to 5.5% last week hinting that deb-holders jumped to Maker (<a href="https://messari.io/asset/maker\">$MKR</a>) to refinance outstanding loans from other platforms. A governance vote will be held on Friday that could increase the debt ceiling by $10 - $20 million.\n\nWhy it matters:\n\nMaker continues to be the dominant DeFi lending platform and interest continues to grow as the project moves closer to a Nov. 18 upgrade that will add collateral types beyond just Ethereum (<a href="https://messari.io/asset/ethereum\">$ETH</a>).\nMaker’s stability fee has varied dramatically throughout the year hitting 20% over the summer before coming back down to where it is now. As the fee increased other DeFi platforms became more attractive and Maker saw an outflow of capital. Now the reverse is true as Maker is one of the lowest fee borrowing platforms.
+                        </p>
+                    </div>
+                    <div class="thumb_Footer">
+                        <p class="thumb_Estimate">6 mins read</p>
+                        <p>. selected for you</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <section class="fourth-Row-Container">
+            <div id="chart-Data">
+                <h2 class="coin_Updates">Latest Coin  Price Updates</h2>
+                <canvas id="barchartexample" width="800" height="450"></canvas>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

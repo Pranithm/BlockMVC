@@ -1,0 +1,61 @@
+﻿@{ Layout = "_Layout"; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Write</title>
+    <link rel="stylesheet" href="~/css/update.css" />
+    <script>
+        @{
+            var data = @ViewBag.documentData;
+            }
+        const setUpdateData = (id) => {
+            if (id = "writeTitle") {
+                var data = document.getElementById(id).value;
+                console.log(data);
+                var x = document.getElementById(id);
+                console.log(x);
+                document.getElementById(id).innerHTML = data;
+            } else {
+                var data = document.getElementById(id).innerHTML;
+
+                document.getElementById(id).innerHTML = data;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="update_FirstRow">
+        <h1 class="update_FirstRow-Head">Update the BLOCK</h1>
+    </div>
+
+    <div class="update_SecondRow">
+        <form name="form" asp-controller="DatabaseExample" asp-action="updateData" method="get">
+            <input hidden name="id1" value=@ViewBag.id />
+            <div class="input_TitleContainer input_NameContainer">
+                <input name="updateName" class="story_TitleBox" value=@ViewBag.author onchange="setUpdateData(updateName)" type="text" id="updateName" placeholder="Your Name">
+            </div>
+            <div class="input_TitleContainer">
+                <input name="updateTitle" class="story_TitleBox" value=@ViewBag.documentTitle onchange="setUpdateData(updateTitle)" type="text" id="updateTitle" placeholder="Block Title">
+            </div>
+            <div class="input_StoryContainer">
+                @*<p id="myTextarea" name="updateData" onchange="setUpdateData(updateData)"  class="input_Story" contenteditable="true" data-placeholder="Write your Block..."></p>*@
+                @Html.TextArea("textarea", (string)@ViewBag.documentData, new { @class = "input_Story", name = "txtComment" })
+            </div>
+            <div class="write_ButtonContainer">
+                <button type="submit" asp-controller="DatabaseExample" asp-action="updateData" class="update_Button">Update<i class="fa fa-pencil pencil-Icon" aria-hidden="true"></i></button>
+            </div>
+        </form>
+
+    </div>
+    <script>
+        window.onload = function () {
+            document.getElementById("myTextarea").innerHTML = @ViewBag.documentTitle ;
+        }
+    </script>
+</body>
+</html>
