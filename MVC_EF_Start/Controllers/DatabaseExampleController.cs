@@ -94,7 +94,14 @@ namespace MVC_EF_Start.Controllers
 
             return View("dataInsert");
     }
-
+    
+        public IActionResult StoriesDisplayData()
+        {
+            var stories=dbContext.Documents.Include(c=>c.cinfo).Include(c=>c.author).Select(c => c).ToList();
+            ViewBag.storyBlockDetails = stories;
+            return View("Stories");
+        }
+        
         public IActionResult Stories()
         {
             var stories=dbContext.Documents.Include(c=>c.cinfo).Include(c=>c.author).Select(c => c).ToList();
