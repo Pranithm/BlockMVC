@@ -448,13 +448,7 @@ namespace MVC_EF_Start.Controllers
 
         return View();
     }
-
-    public ViewResult Query3()
-    {
-           // var publisherDetails = dbContext.Documents.Where(c => dbContext.DocumentInfos.Where(p => p.DateDownloaded == "12/31/2015").Where(p => p.user.UserID==1).Select(p => p.doc.DocumentID).Contains(c.DocumentID)).Select(uid => new { DocumentTitle = uid.DocumentTitle, ResearchField = uid.ResearchField }).ToList();
-
-            return View();
-    }
+    
     
     public ViewResult Query4()
         {
