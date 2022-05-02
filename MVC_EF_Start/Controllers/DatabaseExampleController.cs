@@ -440,14 +440,6 @@ namespace MVC_EF_Start.Controllers
               return View("Stories");
           }
         */
-        public ViewResult Query2()
-    {
-           // var ex = dbContext.Documents.Where(p => p.ResearchField == "Machine Learning").ToList();
-           // var publisherDetails = dbContext.Authors.Where(c => dbContext.Documents.Where(p=>p.ResearchField== "Machine Learning").Select(p=> p.author.AuthorID).Contains(c.AuthorID)).Select(uid => new { AuthorFirstName = uid.AuthorFirstName, AuthorLastName = uid.AuthorLastName }).ToList();
-            Console.WriteLine("hello");
-
-        return View();
-    }
     
     
     public ViewResult Query4()
