@@ -97,7 +97,6 @@ namespace MVC_EF_Start.Controllers
 
         public IActionResult Stories()
         {
-            //var storiesDetails = dbContext.Authors.Include(c => c.document).Select(c => c).ToList();
             var stories=dbContext.Documents.Include(c=>c.cinfo).Include(c=>c.author).Select(c => c).ToList();
             ViewBag.storyBlockDetails = stories;
             return View("Stories");
@@ -161,7 +160,7 @@ namespace MVC_EF_Start.Controllers
             ViewBag.documentTitle = doc.DocumentTitle;
             return View("Update");
         }
-
+        // query to remove the blocks from database
         public async Task<ViewResult> DeleteBlock(int id1)
         {
             var doc = dbContext.Documents.Include(c => c.author).Include(c => c.cinfo).Where(c => c.DocumentID == id1).First();
