@@ -10,6 +10,15 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+.navlinkDataHeader {
+    position: sticky;
+    top: 0;
+    bottom:0;
+}
+
+.navlinkDataActive {
+    color: blue
+}
 
 .navbarLists {
     list-style-type: none;
