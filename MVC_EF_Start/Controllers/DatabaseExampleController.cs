@@ -441,15 +441,6 @@ namespace MVC_EF_Start.Controllers
           }
         */
     
-    
-    public ViewResult Query4()
-        {
-           // var publisherDetails = dbContext.Documents.GroupBy(q => q.ResearchField).OrderByDescending(gp => gp.Count())
-          //                          .Take(2)
-          //                          .Select(g => g.Key).ToList();
-
-            return View();
-    }
 
         public ViewResult Query5()
         {
