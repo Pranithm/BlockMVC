@@ -43,7 +43,6 @@
                 <input name="updateTitle" class="story_TitleBox" value=@ViewBag.documentTitle onchange="setUpdateData(updateTitle)" type="text" id="updateTitle" placeholder="Block Title">
             </div>
             <div class="input_StoryContainer">
-                @*<p id="myTextarea" name="updateData" onchange="setUpdateData(updateData)"  class="input_Story" contenteditable="true" data-placeholder="Write your Block..."></p>*@
                 @Html.TextArea("textarea", (string)@ViewBag.documentData, new { @class = "input_Story", name = "txtComment" })
             </div>
             <div class="write_ButtonContainer">
