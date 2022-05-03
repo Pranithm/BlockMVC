@@ -42,6 +42,6 @@ namespace MVC_EF_Start.Models
         public int UserID { get; set; }
         public string UserFirstName { get; set; }
         public string UserLastName { get; set; }
-        public List<Comment> cinfo { get; set; }
+        public List<Comment> cinfo { get; set; } 
     }
 }
