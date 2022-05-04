@@ -434,13 +434,6 @@ namespace MVC_EF_Start.Controllers
             return View("Stories");
 
     }
-        /*  public ViewResult returnStories()
-          {
-
-              return View("Stories");
-          }
-        */
-    
 
         public ViewResult Query5()
         {
