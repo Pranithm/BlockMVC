@@ -35,6 +35,7 @@ namespace MVC_EF_Start.Models
         public Document doc { get; set; }
         public User user { get; set; }
         public string CommentData { get; set; }
+        public int CommentStory { get; set; }
     }
 
     public class User
