@@ -435,13 +435,7 @@ namespace MVC_EF_Start.Controllers
 
     }
 
-        public ViewResult Query5()
-        {
-           // var publisherDetails = dbContext.DocumentInfos.Include(s => s.doc).Include(s => s.user).GroupBy(q => q.doc.ResearchField).Select(q => new { id = q.Key, count=q.Count() }).OrderByDescending(g=>g.count).Take(2)
-           //     .ToList();
 
-            return View();
-        }
 
        
          
